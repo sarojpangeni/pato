@@ -5,6 +5,7 @@ import Menu from '../navPages/Homepage/Menu'
 import ReservationForm from '../navPages/Homepage/Reservation'
 import Blog from '../navPages/Homepage/Blog'
 import Email from '../navPages/Homepage/Email'
+// import Review from '../navPages/Homepage/review'
 
 
 function Homes() {
@@ -14,6 +15,7 @@ function Homes() {
         <About />
         <Menu />
         <ReservationForm />
+        {/* <Review /> */}
         <Blog />
         <Email />
     </div>

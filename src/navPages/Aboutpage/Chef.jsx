@@ -24,13 +24,13 @@ const Chef = () => {
 
   return (
     <div className="bg-gray-50 py-12">
-      <h1 className="text-center text-2xl font-bold text-red-600 mb-3">Meet Our</h1>
+      <h1 className="text-center text-2xl font-bold text-red-500 italic mb-3">Meet Our</h1>
       <h2 className="text-center text-5xl font-bold text-gray-800 tracking-widest">CHEF</h2>
       <div className="grid grid-cols-3 gap-8 mt-10 px-6 md:px-20">
         {chefs.map((chef, index) => (
           <div
             key={index}
-            className="bg-white shadow-lg rounded-2xl p-6 text-center flex flex-col items-center -top-0"
+            className="bg-white shadow-lg rounded-2xl p-6 text-center flex flex-col items-centernpm run dev -top-0"
           >
             <img
               src={chef.image}
