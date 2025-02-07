@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -6,7 +6,10 @@ import { FaTripadvisor } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
 
 function NavBar() {
+
   const [Active, setActive] = useState(0);
+  const [isFixed, setIsFixed] = useState(false);
+
   const navItems = [
     { title: "Home", path: "/" },
     { title: "Menu", path: "/menu" },
@@ -16,8 +19,22 @@ function NavBar() {
     { title: "Blog", path: "/blog" },
     { title: "Contact", path: "/contact" },
   ];
+
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setIsFixed(true);
+    } else {
+      setIsFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className='relative z-10 bg-transparent '>
+    <div className={`z-10 fixed bg-transparent transition-all duration-300 ${isFixed ? 'fixed top-0 left-0 w-full bg-white shadow-lg' : 'relative bg-transparent'}`}>
       <div className='w-full px-8 flex justify-center items-center gap-16 py-4'>
         <div className="flex">
           <img
