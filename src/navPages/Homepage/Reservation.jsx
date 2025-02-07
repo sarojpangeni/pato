@@ -31,8 +31,8 @@ const ReservationForm = () => {
     return (
         <div className="flex bg-gray-50 items-center justify-center pt-10">
             <div className="flex flex-col items-center justify-center">
-                <span className="text-4xl font-mono text-gray-800">Reservation</span> 
-                <h1 className="text-red-500 font-bold text-4xl uppercase">Book Table</h1>
+                <span className="text-xl italic font-mono text-red-500">Reservation</span> 
+                <h1 className="text-grey-800 font-bold text-4xl uppercase">Book Table</h1>
                 <form
                     onSubmit={handleSubmit}
                     className="bg-transparent p-8 rounded-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6"
@@ -127,11 +127,11 @@ const ReservationForm = () => {
                     </div>
                 </form>
             </div>
-            <div className="flex items-center justify-center p-8">
+            <div className="relative flex items-center overflow-hidden justify-center p-8 transition duration-300">
                 <img
                     src="https://preview.colorlib.com/theme/pato/images/booking-01.jpg"
                     alt="Restaurant"
-                    className="rounded-xl shadow-lg object-cover w-full max-w-sm"
+                    className="rounded-xl shadow-lg object-cover w-full max-w-sm group-hover:scale-110 transition duration-300"
                 />
             </div>
         </div>

@@ -26,7 +26,7 @@ const Menu = () => {
             <img
               src={item.image}
               alt={item.name}
-              className="w-full h-48 object-cover group-hover:scale-110 transition duration-300"
+              className="w-full h-48 object-cover transition duration-300"
             />
             <div className="absolute inset-0 bg-black bg-opacity-40 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300">
               <span className="text-white text-xl font-semibold px-4 py-2 bg-red-500 rounded-full">
