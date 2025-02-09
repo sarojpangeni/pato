@@ -13,7 +13,7 @@ const Home = () => {
   ];
   const sliderRef = useRef(null);
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -23,7 +23,7 @@ const Home = () => {
     arrows: false,
   };
   return (
-    <div className="relative w-screen h-screen">
+    <div className="relative w-full h-lvh">
       <div className="relative w-full h-full">
         <Slider {...settings} ref={sliderRef}>
           {images.map((image, index) => (
@@ -37,21 +37,9 @@ const Home = () => {
           ))}
         </Slider>
         <div className="absolute inset-0 flex justify-between items-center px-4 cursor-pointer">
-          <button
-            onClick={() => sliderRef.current.slickPrev()}
-            className="bg-black bg-opacity-60 text-white p-3 md:p-4 rounded-full hover:bg-red-500 transition duration-300 cursor-pointer"
-          >
-            &#x2039;
-          </button>
-          <button
-            onClick={() => sliderRef.current.slickNext()}
-            className="bg-black bg-opacity-60 text-white p-3 md:p-4 rounded-full hover:bg-red-500 transition duration-300"
-          >
-            &#x203A;
-          </button>
         </div>
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 bg-black bg-opacity-30">
-          <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-4">Welcome to</h1>
+          <h1 className="text-3xl font-lalw md:text-4xl lg:text-6xl font-bold mb-4 text-red-500">Welcome to</h1>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-extrabold mb-6">PATO PLACE</h2>
           <button className="bg-red-500 text-white py-2 px-4 md:py-3 md:px-6 lg:py-4 lg:px-8 rounded-lg text-sm md:text-lg lg:text-xl font-semibold hover:bg-red-600 transition transform hover:scale-105">
             Look Menu

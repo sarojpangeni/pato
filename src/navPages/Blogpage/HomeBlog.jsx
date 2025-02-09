@@ -122,30 +122,29 @@ function HomeBlog() {
         <div>
             <div className='p-4 font-thin border-b-2'>
                 <div className='items-center justify-center mx-60'>
-                    <a href="#" className='cursor-pointer hover:text-rose-400'>HOME</a>
+                    <a href="#" className='cursor-pointer hover:text-red-400'>HOME</a>
                     <span className='mx-5'>/</span>
                     <span>BLOG</span></div>
             </div>
-            <div className='flex justify-center p-4'>
-                <div className='w-1/6'></div>
-                <div className='w-3/6 gap-5 p-9 pr-16 border-r-2'>
+            <div className='flex justify-center flex-wrap gap-6 p-4'>
+                <div className='w-full md:w-2/3 lf:w-3/5 gap-5 p-9 pr-16 md:border-r-2'>
                     {blogs.map((recipe, index) => (
                         <div
                             key={index}
-                            className=' overflow-hidden'>
+                            className=' overflow-hidden mb-6'>
                             <div className='relative'
                             >
                                 <img
                                     src={recipe.image}
                                     alt="image"
-                                    className='w-2/3 h-60 object-cover border rounded-lg shadow-lg' />
+                                    className='w-full h-60 object-cover border rounded-lg' />
                                 <div className='absolute top-3 left-3 bg-red-600 text-white text-sm font-semibold py-1 px-2 rounded'>
                                     <p>{recipe.date.day}</p>
                                     <p>{recipe.date.month}, {recipe.date.year}</p>
                                 </div>
                             </div>
                             <div className='p-4'>
-                                <h2 className="text-2xl uppercase text-gray-800 mb-2 hover:text-red-500 cursor-pointer">{recipe.title}</h2>
+                                <h2 className="md:text-2xl text-xl uppercase text-gray-800 mb-2 hover:text-red-500 cursor-pointer">{recipe.title}</h2>
                                 <p className="text-sm text-gray-600 mb-4">by {recipe.author} | {recipe.category} | {recipe.comments} Comments</p>
                                 <p className="text-gray-700 text-sm mb-4">{recipe.discription}</p>
                                 <a
@@ -154,13 +153,13 @@ function HomeBlog() {
                             </div>
                         </div>
                     ))}
-                    <div className='m-5'>
+                    <div className='flex justify-center m-5'>
                         <button className='border rounded-full h-7 w-7 bg-gray-800 text-white mr-3'>1</button>
                         <button className='border rounded-full h-7 w-7 hover:bg-gray-800 hover:text-white'>2</button>
                     </div>
                 </div>
-                <div className='w-1/6 pt-9  px-2'>
-                    <div className='flex h-fit'>
+                <div className='w-full md:w-2/6 lg:w-1/5 pt-9 px-4'>
+                    <div className='flex mb-6'>
                         <input type="text"
                             placeholder='Search'
                             className="w-full p-2 text-gray-700 focus:outline-none border" />
@@ -191,7 +190,7 @@ function HomeBlog() {
                         ))}
                     </div>
                     <div className='uppercase'>
-                        <h1 className='tracking-widest py-9 items-center justify-center text-xl font-thin uppercase'>archive</h1>
+                        <h1 className='tracking-widest py-9 items-center justify-center text-xl font-thin'>archive</h1>
                         {archive.map((ar, index) => (
                             <div key={index}
                                 className='flex justify-between items-center py-2 text-gray-800 text-sm'>

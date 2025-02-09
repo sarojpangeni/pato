@@ -15,7 +15,7 @@ const About = () => {
             Donec quis lorem nulla. Nunc eu odio mi. Morbi nec lobortis est. Sed fringilla, nunc sed imperdiet lacinia, nisl ante egestas mi, ac facilisis ligula sem id neque.
           </p>
           <div className="flex items-center justify-center ">
-          <button className="text-gray-800 font-semibold text-lg gap-2 hover:text-red-500 transition">
+          <button className="text-gray-800 font-semibold text-lg gap-2 hover:text-red-500 transition mb-6">
             OUR STORY <span>&rarr;</span>
           </button>
           </div>

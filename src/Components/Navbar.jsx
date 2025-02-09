@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaTripadvisor } from "react-icons/fa";
@@ -9,6 +9,8 @@ function NavBar() {
 
   const [Active, setActive] = useState(0);
   const [isFixed, setIsFixed] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  const location = useLocation();
 
   const navItems = [
     { title: "Home", path: "/" },
@@ -21,7 +23,7 @@ function NavBar() {
   ];
 
   const handleScroll = () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 10) {
       setIsFixed(true);
     } else {
       setIsFixed(false);
@@ -33,33 +35,58 @@ function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    setActive(null)
+  }, [location.pathname])
+
   return (
-    <div className={`z-10 fixed bg-transparent transition-all duration-300 ${isFixed ? 'fixed top-0 left-0 w-full bg-white shadow-lg' : 'relative bg-transparent'}`}>
-      <div className='w-full px-8 flex justify-center items-center gap-16 py-4'>
-        <div className="flex">
+    <div  className={`z-10 fixed  transition-all duration-300
+     ${isFixed ? 'fixed w-full bg-white shadow-lg ' : ' left-0 right-0 mx-auto  bg-transparent'}`}>
+      <div
+        className='w-full justify-between px-8 flex md:justify-center items-center  md:items-center gap-16 py-4'>
+        <div
+          className="flex">
           <img
             src="https://preview.colorlib.com/theme/pato/images/icons/logo.png"
             alt="Logo"
-            className="bg-black cursor-pointer"
+            className={`cursor-pointer ${isFixed ? ' bg-red-500' : 'bg-transparent'} `}
           />
         </div>
-        <div className="flex gap-9 py-3 uppercase ml-5 bg-transparent">
+        <div className="hidden md:flex gap-9 py-3  uppercase ml-5 bg-transparent">
           {navItems.map((val, i) => (
             <Link
               key={i}
               to={val.path}
-              className={`${val.path === location.pathname ? "text-blue-300" : "text-black"} hover:text-blue-400`}>
+              className={`hover:text-blue-400 transition ${isFixed ? 'text-black font-semibold' : 'text-white'}`}>
               <div onClick={() => setActive(i)}>{val.title}</div>
             </Link>
           ))}
         </div>
-        <div className='flex gap-6 py-4 ml-5 text-black cursor-pointer'>
-          <div><FaTripadvisor /></div>
-          <div><FaFacebookF /></div>
-          <div><FaTwitter /></div>
-          <div><CiMenuBurger /></div>
+        <div className={`flex items-center gap-6 ${isFixed ? 'text-black' : 'text-white'}`}>
+          <div className={`gap-4 hidden md:flex`}>
+            <FaTripadvisor className='hover:text-blue-400 cursor-pointer' />
+            <FaFacebookF className='hover:text-blue-400 cursor-pointer' />
+            <FaTwitter className='hover:text-blue-400 cursor-pointer' />
+          </div>
+          <div>
+            <button className='hover:text-blue-400 text-xl'
+              onClick={() => setOpenMenu(!openMenu)}><CiMenuBurger /></button>
+          </div>
         </div>
       </div>
+      {
+        openMenu && (
+          <div className='flex flex-col bg-white'>
+            {navItems.map((value, index) => (
+              <Link
+                key={index}
+                to={value.path}
+                className='py-2 text-black hover:text-blue-500 w-full text-center'
+              >{value.title}</Link>
+            ))}
+          </div>
+        )
+      }
     </div>
   )
 }

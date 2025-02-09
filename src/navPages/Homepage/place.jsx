@@ -31,15 +31,15 @@ function Place() {
                     <h1 className='uppercase text-white text-4xl md:text-5xl font-bold tracking-wide'>Pato Place</h1>
                 </div>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto py-16 ">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto py-16 px-8">
                 {blogs.map((pato, index) => (
                     <div key={index}
                     className=" rounded-lg overflow-hidden">
                         <div className='relative'>
                             <img src={pato.image} alt="pato" 
-                            className='w-full h-48 object-cover'/>
+                            className='md:w-full h-48 sm:h-56 md:h-64 object-cover rounded-lg transition-all duration-300'/>
                         </div>
-                        <div className="p-6">
+                        <div className="p-6 ">
                             <h1 className="text-xl font-semibold text-gray-800 mb-3 tracking-widest">{pato.title}</h1>
                             <p className="text-gray-600 mb-4">{pato.description}</p>
                             <button

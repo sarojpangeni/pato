@@ -29,7 +29,7 @@ function BookTable() {
     };
     return (
         <div>
-            <div className="flex flex-col items-center justify-center m-9">
+            <div className="flex flex-col items-center justify-center m-6 md:m-9">
                 <span className="text-3xl font-mono text-red-500 mt-10 italic">Reservation</span>
                 <h1 className="text-black font-bold text-6xl uppercase tracking-wider">Book Table</h1>
                 <form
@@ -126,13 +126,13 @@ function BookTable() {
                     </div>
                 </form>
             </div>
-            <div className='flex mx-32 my-24 p-9 gap-9 items-center justify-center'>
-                <div className='w-1/2'>
+            <div className='flex flex-col mx-6 md:flex-row md:mx-32 my-12 md:my-24 p-9 gap-8 items-center justify-center'>
+                <div className='w-full md:w-1/2 text-center md:text-left'>
                     <h1 className=" text-3xl mb-5">Reserve by Phone</h1>
                     <p className='font-thin text-gray-400 text-lg'>Donec quis euismod purus. Donec feugiat ligula rhoncus, varius nisl sed, tincidunt lectus. Nulla vulputate ,
                         lectus vel volutpat efficitur, orci lacus sodales sem, sit amet quam: <span className='text-red-500'>(001) 345 6889</span></p>
                 </div>
-                <div>
+                <div className='w-full md:w-1/2 text-center md:text-left'>
                     <h1 className=" text-3xl mb-5">For Event Booking</h1>
                     <p className='font-thin text-gray-400 text-lg'>Donec feugiat ligula rhoncus: <span className='text-red-500'>(001) 345 6889</span> , varius nisl sed, tinci-dunt lectus sodales sem.</p>
                 </div>

@@ -20,7 +20,7 @@ function Recipe1() {
                     <img
                         src="https://preview.colorlib.com/theme/pato/images/our-story-01.jpg"
                         alt="Delicious Food"
-                        className="rounded-xl shadow-lg object-cover w-full max-w-sm "
+                        className="rounded-xl shadow-lg object-cover w-full max-w-sm"
                     />
                 </div>
             </div>
@@ -29,10 +29,10 @@ function Recipe1() {
                     <img
                         src="https://preview.colorlib.com/theme/pato/images/our-story-02.jpg"
                         alt="Delicious Food"
-                        className="rounded-xl shadow-lg object-cover w-full max-w-sm "
+                        className="rounded-xl shadow-lg object-cover w-full max-w-sm"
                     />
                 </div>
-                <div className="text-center justify-center  ml-5">
+                <div className="text-center justify-center  ml-5 pt-3">
                     <h2 className="text-red-500 text-2xl font-semibold italic mb-2">
                         Romantic
                     </h2>

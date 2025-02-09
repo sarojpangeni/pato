@@ -3,7 +3,10 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-  ],  theme: {
+  ], theme: {
+    fontFamily: {
+      lalw: "Cedarville Cursive"
+    },
     extend: {},
   },
   plugins: [],

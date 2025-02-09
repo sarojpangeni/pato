@@ -31,7 +31,7 @@ const ReservationForm = () => {
     return (
         <div className="flex bg-gray-50 items-center justify-center pt-10">
             <div className="flex flex-col items-center justify-center">
-                <span className="text-xl italic font-mono text-red-500">Reservation</span> 
+                <span className="text-xl font-mono italic ital text-red-500">Reservation</span> 
                 <h1 className="text-grey-800 font-bold text-4xl uppercase">Book Table</h1>
                 <form
                     onSubmit={handleSubmit}
@@ -127,7 +127,7 @@ const ReservationForm = () => {
                     </div>
                 </form>
             </div>
-            <div className="relative flex items-center overflow-hidden justify-center p-8 transition duration-300">
+            <div className="relative  md:block hidden items-center overflow-hidden justify-center p-8 transition duration-300">
                 <img
                     src="https://preview.colorlib.com/theme/pato/images/booking-01.jpg"
                     alt="Restaurant"
