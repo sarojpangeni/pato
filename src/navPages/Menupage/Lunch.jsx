@@ -44,7 +44,7 @@ function Lunch() {
         <div className='flex flex-col gap-8 items-center justify-center'>
             <div className="relative w-full min-h-60 bg-black flex items-center justify-center">
                 <div
-                    className="absolute w-full inset-0 bg-cover bg-black opacity-50"
+                    className="absolute inset-0 bg-cover bg-black opacity-50"
                     style={{
                         backgroundImage: `url("https://preview.colorlib.com/theme/pato/images/header-menu-01.jpg")`,
                     }}

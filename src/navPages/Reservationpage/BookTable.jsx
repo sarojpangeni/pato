@@ -126,7 +126,7 @@ function BookTable() {
                     </div>
                 </form>
             </div>
-            <div className='flex flex-col mx-6 md:flex-row md:mx-32 my-12 md:my-24 p-9 gap-8 items-center justify-center'>
+            <div className='flex flex-col mx-6 md:flex-row md:mx-32 my-12 md:my-24 p-9 gap-8 justify-center'>
                 <div className='w-full md:w-1/2 text-center md:text-left'>
                     <h1 className=" text-3xl mb-5">Reserve by Phone</h1>
                     <p className='font-thin text-gray-400 text-lg'>Donec quis euismod purus. Donec feugiat ligula rhoncus, varius nisl sed, tincidunt lectus. Nulla vulputate ,

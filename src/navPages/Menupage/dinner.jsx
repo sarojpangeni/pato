@@ -47,8 +47,8 @@ function Dinner() {
     ];
 
     return (
-        <div>
-            <div className="relative min-h-60 bg-black flex items-center justify-center">
+        <div className='flex flex-col gap-8 items-center justify-center'>
+            <div className="relative w-full min-h-60 bg-black flex items-center justify-center">
                 <div
                     className="absolute inset-0 bg-cover bg-black opacity-50"
                     style={{
@@ -63,16 +63,16 @@ function Dinner() {
                     </h1>
                 </div>
             </div>
-            <div className="grid grid-cols-2 gap-8 items-center justify-center  p-16 pt-32">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 items-center justify-center  p-16">
                 {menuItems.map((item) => (
                     <div
                         key={item.id}
-                        className="flex flex-colflex-row bg-white rounded-lg transition duration-300 items-center "
+                        className="flex flex-col px-3 sm:flex-row bg-white rounded-lg transition duration-300 items-center "
                     >
                         <div className="w-full md:w-1/5 h-60 md:h-auto flex-shrink-0 overflow-hidden rounded-lg">
                             <img
                                 src={item.image}
-                                alt={`Image of ${item.name}`}
+                                alt="dinner"
                                 className="w-full h-full object-cover"
                             />
                         </div>

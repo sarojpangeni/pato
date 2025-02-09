@@ -40,7 +40,7 @@ function NavBar() {
   }, [location.pathname])
 
   return (
-    <div  className={`z-10 fixed  transition-all duration-300
+    <div className={`z-10 fixed  transition-all duration-300
      ${isFixed ? 'fixed w-full bg-white shadow-lg ' : ' left-0 right-0 mx-auto  bg-transparent'}`}>
       <div
         className='w-full justify-between px-8 flex md:justify-center items-center  md:items-center gap-16 py-4'>
@@ -49,7 +49,7 @@ function NavBar() {
           <img
             src="https://preview.colorlib.com/theme/pato/images/icons/logo.png"
             alt="Logo"
-            className={`cursor-pointer ${isFixed ? ' bg-red-500' : 'bg-transparent'} `}
+            className={`cursor-pointer rounded-xl ${isFixed ? ' bg-red-500' : 'bg-transparent'} `}
           />
         </div>
         <div className="hidden md:flex gap-9 py-3  uppercase ml-5 bg-transparent">
@@ -57,7 +57,7 @@ function NavBar() {
             <Link
               key={i}
               to={val.path}
-              className={`hover:text-blue-400 transition ${isFixed ? 'text-black font-semibold' : 'text-white'}`}>
+              className={`hover:text-blue-400 transition ${isFixed ? 'text-black' : 'text-white'}`}>
               <div onClick={() => setActive(i)}>{val.title}</div>
             </Link>
           ))}
@@ -68,25 +68,27 @@ function NavBar() {
             <FaFacebookF className='hover:text-blue-400 cursor-pointer' />
             <FaTwitter className='hover:text-blue-400 cursor-pointer' />
           </div>
-          <div>
+          <div className='flex md:hidden'>
             <button className='hover:text-blue-400 text-xl'
               onClick={() => setOpenMenu(!openMenu)}><CiMenuBurger /></button>
           </div>
         </div>
       </div>
-      {
-        openMenu && (
-          <div className='flex flex-col bg-white'>
-            {navItems.map((value, index) => (
-              <Link
-                key={index}
-                to={value.path}
-                className='py-2 text-black hover:text-blue-500 w-full text-center'
-              >{value.title}</Link>
-            ))}
-          </div>
-        )
-      }
+      <div className='  h-full flex justify-end'>
+        {
+          openMenu && (
+            <div className='bg-white w-1/2 absolute  h-lvh flex flex-col gap-9 '>
+              {navItems.map((value, index) => (
+                <Link
+                  key={index}
+                  to={value.path}
+                  className='py-2 text-black hover:text-blue-500 w-full text-center'
+                >{value.title}</Link>
+              ))}
+            </div>
+          )
+        }
+      </div>
     </div>
   )
 }
