@@ -41,24 +41,24 @@ const menu = [
 
 const List = () => {
   return (
-    <div className="min-h-screen bg-gray-50 pt-32 p-32">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div className="min-h-screen bg-gray-50 pt-28 px-6 md:px-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16">
         {menu.map((section) => (
           <div key={section.category}
-          className="pl-10">
-            <h2 className="text-2xl font-bold uppercase text-gray-700 mb-4">
+          className="px-4">
+            <h2 className="text-3xl md:text-4xl font-bold uppercase text-gray-700 mb-4 text-center md:text-left border-b-2 border-x-gray-300 pb-2">
               {section.category}
             </h2>
             {section.items.map((item, index) => (
               <div
                 key={index}
-                className="flex justify-between border-gray-300 py-2"
+                className="flex justify-between items-start border-gray-300 py-4"
               >
                 <div >
-                  <p className=" text-gray-800 text-xl">{item.name}</p>
+                  <p className="text-lg text-gray-800 font-semibold  md:text-xl">{item.name}</p>
                   <p className="text-sm text-gray-500">{item.description}</p>
                 </div>
-                <p className="font-semibold text-gray-700">{item.price}</p>
+                <p className="font-semibold text-lg md:text-xl text-gray-700">{item.price}</p>
               </div>
             ))}
           </div>

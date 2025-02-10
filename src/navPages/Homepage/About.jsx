@@ -2,8 +2,8 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50 px-8">
-      <div className="grid md:grid-cols-2 items-center max-w-6xl">
+    <div className="flex items-center justify-center h-screen md:h-full md:py-9 bg-gray-50 px-8">
+      <div className="grid md:grid-cols-1 md:m-5 items-center max-w-6xl">
         <div className="text-center justify-center  ml-5">
           <h2 className="text-red-500 text-xl font-semibold italic mb-2">
             Italian Restaurant

@@ -4,10 +4,11 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaTripadvisor } from "react-icons/fa";
 import { CiMenuBurger } from "react-icons/ci";
+import { IoMdClose } from "react-icons/io";
 
 function NavBar() {
 
-  const [Active, setActive] = useState(0);
+  const [Active, setActive] = useState(null);
   const [isFixed, setIsFixed] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const location = useLocation();
@@ -36,11 +37,12 @@ function NavBar() {
   }, []);
 
   useEffect(() => {
-    setActive(null)
+    const activeIndex = navItems.findIndex(item => item.path === location.pathname)
+    setActive(activeIndex)
   }, [location.pathname])
 
   return (
-    <div className={`z-10 fixed  transition-all duration-300
+    <div  className={`z-10 fixed  transition-all duration-300
      ${isFixed ? 'fixed w-full bg-white shadow-lg ' : ' left-0 right-0 mx-auto  bg-transparent'}`}>
       <div
         className='w-full justify-between px-8 flex md:justify-center items-center  md:items-center gap-16 py-4'>
@@ -52,12 +54,12 @@ function NavBar() {
             className={`cursor-pointer rounded-xl ${isFixed ? ' bg-red-500' : 'bg-transparent'} `}
           />
         </div>
-        <div className="hidden md:flex gap-9 py-3  uppercase ml-5 bg-transparent">
+        <div className="hidden md:flex gap-9 py-3 uppercase ml-5 bg-transparent">
           {navItems.map((val, i) => (
             <Link
               key={i}
               to={val.path}
-              className={`hover:text-blue-400 transition ${isFixed ? 'text-black' : 'text-white'}`}>
+              className={`hover:text-blue-400 transition ${isFixed ? 'text-black' : Active === i ? "text-blue-400" : 'text-white'}`}>
               <div onClick={() => setActive(i)}>{val.title}</div>
             </Link>
           ))}
@@ -77,12 +79,23 @@ function NavBar() {
       <div className='  h-full flex justify-end'>
         {
           openMenu && (
-            <div className='bg-white w-1/2 absolute  h-lvh flex flex-col gap-9 '>
+            <div className='bg-white w-1/2 absolute h-lvh flex flex-col gap-9 rounded-3xl p-6 '>
+              <div>
+              <button
+                className='text-2xl absolute top-4 right-4 hover:text-red-500 hover:border hover:rounded-lg hover:bg-black'
+                onClick={() => setOpenMenu(false)}
+                ><IoMdClose /></button>
+              </div>
               {navItems.map((value, index) => (
                 <Link
                   key={index}
                   to={value.path}
-                  className='py-2 text-black hover:text-blue-500 w-full text-center'
+                  className={`py-2 text-lg font-semibold text-center transition-all rounded-md
+                     ${Active === index ? "text-blue-400 bg-gray-200" : "text-black hover:text-blue-500 hover:bg-gray-300"}`}
+                     onClick={() => {
+                      setActive(index)
+                      setOpenMenu(false)
+                     }}
                 >{value.title}</Link>
               ))}
             </div>

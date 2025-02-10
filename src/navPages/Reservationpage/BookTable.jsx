@@ -29,14 +29,16 @@ function BookTable() {
     };
     return (
         <div>
-            <div className="flex flex-col items-center justify-center m-6 md:m-9">
+            <div className="px-4 md:px-12 lg:px-24 py-12">
+                <div className='flex flex-col items-center text-center'>
                 <span className="text-3xl font-mono text-red-500 mt-10 italic">Reservation</span>
-                <h1 className="text-black font-bold text-6xl uppercase tracking-wider">Book Table</h1>
+                <h1 className="text-black font-bold text-4xl md:text-6xl uppercase tracking-wider">Book Table</h1>
+                </div>
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-transparent p-8 rounded-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="bg-transparent p-6 md:p-8 rounded-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 mt-8"
                 >
-                    <div>
+                    <div className='w-full'>
                         <label className="block text-gray-700 font-medium mb-2">Date</label>
                         <input
                             type="date"
@@ -47,7 +49,7 @@ function BookTable() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='w-full'>
                         <label className="block text-gray-700 font-medium mb-2">Name</label>
                         <input
                             type="text"
@@ -59,7 +61,7 @@ function BookTable() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='w-full'>
                         <label className="block text-gray-700 font-medium mb-2">Time</label>
                         <select
                             name="time"
@@ -76,7 +78,7 @@ function BookTable() {
                             ))}
                         </select>
                     </div>
-                    <div>
+                    <div className='w-full'>
                         <label className="block text-gray-700 font-medium mb-2">Phone</label>
                         <input
                             type="tel"
@@ -88,7 +90,7 @@ function BookTable() {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='w-full'>
                         <label className="block text-gray-700 font-medium mb-2">People</label>
                         <select
                             name="people"
@@ -104,7 +106,7 @@ function BookTable() {
                             ))}
                         </select>
                     </div>
-                    <div>
+                    <div className='w-full'>
                         <label className="block text-gray-700 font-medium mb-2">Email</label>
                         <input
                             type="email"
