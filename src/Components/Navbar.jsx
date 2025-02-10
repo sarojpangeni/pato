@@ -79,7 +79,7 @@ function NavBar() {
       <div className='  h-full flex justify-end'>
         {
           openMenu && (
-            <div className='bg-white w-1/2 absolute h-lvh flex flex-col gap-9 rounded-3xl p-6 '>
+            <div className='bg-white w-1/2 absolute h-lvh flex flex-col gap-9 rounded-3xl p-6 top-0'>
               <div>
               <button
                 className='text-2xl absolute top-4 right-4 hover:text-red-500 hover:border hover:rounded-lg hover:bg-black'
