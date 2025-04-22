@@ -29,13 +29,13 @@ const ReservationForm = () => {
     };
 
     return (
-        <div className="flex bg-gray-50 items-center justify-center pt-10">
-            <div className="flex flex-col items-center justify-center">
+        <div className="flex bg-gray-50 items-center justify-center pt-10 ">
+            <div className="flex flex-col items-center justify-center md:w-max">
                 <span className="text-xl font-mono italic ital text-red-500">Reservation</span> 
                 <h1 className="text-grey-800 font-bold text-4xl uppercase">Book Table</h1>
                 <form
                     onSubmit={handleSubmit}
-                    className="bg-transparent p-8 rounded-lg w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6"
+                    className="bg-transparent p-8 rounded-lg w-full grid grid-cols-1 md:grid-cols-2 gap-6"
                 >
                     <div>
                         <label className="block text-gray-700 font-medium mb-2">Date</label>

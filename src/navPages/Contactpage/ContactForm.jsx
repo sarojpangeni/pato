@@ -74,7 +74,7 @@ const ContactForm = () => {
                     </div>
                 </form>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left p-9">
+            <div className="grid grid-cols-1 md:justify-center md:grid-cols-3 gap-8 text-center md:text-left p-9">
                 <div className="flex items-center gap-4">
                     <FaLocationDot className="text-2xl text-gray-700" />
                     <div>

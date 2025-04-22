@@ -39,10 +39,11 @@ function NavBar() {
   useEffect(() => {
     const activeIndex = navItems.findIndex(item => item.path === location.pathname)
     setActive(activeIndex)
+    window.scrollTo(0, 0)
   }, [location.pathname])
 
   return (
-    <div  className={`z-10 fixed  transition-all duration-300
+    <div className={`z-10 fixed  transition-all duration-300
      ${isFixed ? 'fixed w-full bg-white shadow-lg ' : ' left-0 right-0 mx-auto  bg-transparent'}`}>
       <div
         className='w-full justify-between px-8 flex md:justify-center items-center  md:items-center gap-16 py-4'>
@@ -65,7 +66,7 @@ function NavBar() {
           ))}
         </div>
         <div className={`flex items-center gap-6 ${isFixed ? 'text-black' : 'text-white'}`}>
-          <div className={`gap-4 hidden md:flex`}>
+          <div className={`gap-4 md:hidden hidden lg:flex`}>
             <FaTripadvisor className='hover:text-blue-400 cursor-pointer' />
             <FaFacebookF className='hover:text-blue-400 cursor-pointer' />
             <FaTwitter className='hover:text-blue-400 cursor-pointer' />
@@ -76,14 +77,15 @@ function NavBar() {
           </div>
         </div>
       </div>
-      <div className='  h-full flex justify-end'>
+      <div className='  h-full flex justify-end'
+        onClick={() => setOpenMenu(false)}>
         {
           openMenu && (
             <div className='bg-white w-1/2 absolute h-lvh flex flex-col gap-9 rounded-3xl p-6 top-0'>
               <div>
-              <button
-                className='text-2xl absolute top-4 right-4 hover:text-red-500 hover:border hover:rounded-lg hover:bg-black'
-                onClick={() => setOpenMenu(false)}
+                <button
+                  className='text-2xl absolute top-4 right-4 hover:text-red-500 hover:border hover:rounded-lg hover:bg-black'
+                  onClick={() => setOpenMenu(false)}
                 ><IoMdClose /></button>
               </div>
               {navItems.map((value, index) => (
@@ -92,11 +94,12 @@ function NavBar() {
                   to={value.path}
                   className={`py-2 text-lg font-semibold text-center transition-all rounded-md
                      ${Active === index ? "text-blue-400 bg-gray-200" : "text-black hover:text-blue-500 hover:bg-gray-300"}`}
-                     onClick={() => {
-                      setActive(index)
-                      setOpenMenu(false)
-                     }}
-                >{value.title}</Link>
+                  onClick={() => {
+                    setActive(index)
+                    setOpenMenu(false)
+                  }}
+                >{value.title}
+                </Link>
               ))}
             </div>
           )
